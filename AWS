@@ -87,3 +87,15 @@ Hardcoded Credentials in Code: Inspect application code for hardcoded secrets th
 Logging Misconfigurations: Verify that CloudTrail is enabled across all regions to track unauthorized or malicious activity.
 Unrestricted Log Access: Ensure logs are not publicly accessible or over-permissive, revealing sensitive operations.
 
+
+#Here are few CVEs to Keep in Mind
+1. CVE-2021-32704 - Misconfiguration leading to exposure of sensitive AWS metadata.
+2. CVE-2020-10148 - Amazon WorkSpaces: Unauthorized access vulnerability.
+3. CVE-2021-29203 - AWS CloudFormation vulnerability affecting template parsing.
+4. CVE-2020-8913 - Information disclosure via exposed S3 buckets.
+5. CVE-2020-13882 - AWS Elastic Beanstalk local file inclusion vulnerability.
+6. CVE-2020-8964 - Amazon EC2 instances susceptible to privilege escalation.
+7. CVE-2021-3156 - AWS EC2 shared AMIs leading to privilege escalations.
+8. CVE-2021-36740 - AWS IAM misconfiguration causing potential data leaks.
+9. CVE-2021-32787 - Sensitive AWS API keys found in public repositories.
+10. CVE-2023-20963 - Exploitation of Amazon RDS PostgreSQL plugin.
