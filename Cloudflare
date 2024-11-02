@@ -5,9 +5,12 @@ Cloudflare
 
 #Check Endpoints 
 	Check from Documentaion : https://github.com/cloudflare/cloudflare-docs
+#Check Rules
+	https://developers.cloudflare.com/rules/configuration-rules/
+
 
 #Check for misconfigurations : 
-
+Check it from the documentation and also you can make a proper checlist from it.
 
 #Must check links to visit 
 1. https://bxmbn.medium.com/how-i-test-for-web-cache-vulnerabilities-tips-and-tricks-9b138da08ff9
